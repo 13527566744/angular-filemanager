@@ -61,7 +61,7 @@
 ```json
 {
     "action": "copy",
-    "path": "/public_html/index.php",
+    "items": ["/public_html/libs", "/public_html/config.php"],
     "newPath": "/public_html/index-copy.php"
 }
 ```
