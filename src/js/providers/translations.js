@@ -363,7 +363,7 @@
             open: 'Abrir',
             these_elements: 'estos {{total}} elementos',
             new_folder: 'Nueva carpeta',
-            download_as_zip: 'Descargar como ZIP'
+            download_as_zip: 'Como descargar ZIP'
         });
 
         $translateProvider.translations('fr', {
