@@ -122,7 +122,9 @@
                 return $scope.fileNavigator.folderClick(item);
             }
             if (typeof $scope.config.pickFileCallback === 'function') {
-                return $scope.config.pickFileCallback(item.model);
+                var callbackSuccess = $scope.config.pickFileCallback(item.model);
+
+                if (callbackSuccess === true) return;
             }
             if (item.isImage()) {
                 if ($scope.config.previewImagesInModal) {
