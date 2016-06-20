@@ -348,9 +348,9 @@ class FileManagerApi
             if (!file_exists($this->basePath . $path)) return 'missing';
 
             if (is_dir($path) && $recursive === true) {
-                $iterator = new RecursiveIteratorIterator(
-                    new RecursiveDirectoryIterator($path), 
-                    RecursiveIteratorIterator::SELF_FIRST
+                $iterator = new \RecursiveIteratorIterator(
+                    new \RecursiveDirectoryIterator($path), 
+                    \RecursiveIteratorIterator::SELF_FIRST
                 );
 
                 foreach($iterator as $item) {
@@ -370,8 +370,8 @@ class FileManagerApi
     {
         $archivePath = $this->basePath . $destination . $archiveName;
 
-        $zip = new ZipArchive();
-        if ($zip->open($archivePath, ZipArchive::CREATE) !== true) {
+        $zip = new \ZipArchive();
+        if ($zip->open($archivePath, \ZipArchive::CREATE) !== true) {
             return false;
         }
 
@@ -387,7 +387,7 @@ class FileManagerApi
         $archivePath = $this->basePath . $archivePath;
         $folderPath = $this->basePath . rtrim($destination, '/') . '/' . $folderName;
 
-        $zip = new ZipArchive;
+        $zip = new \ZipArchive;
         if ($zip->open($archivePath) === false) {
             return 'unsupported';
         }
